@@ -1,0 +1,76 @@
+/*SplitText.dys.css*/
+
+.split-text .line {
+  display: block;
+  white-space: nowrap;
+  text-align: start;
+  position: relative;
+  cursor:default;
+}
+
+.split-text .word,
+.split-text .letter {
+  display: inline-block !important;
+  position: relative;
+  text-align: initial;
+}
+
+
+
+
+/* START Visual-Showcasing of splitText options (DELETE BEFORE USE -- only for testing) */
+
+a {
+  position: relative;
+}
+
+a::before {
+  content: '';
+  width: inherit;
+  height: inherit;
+  background-color: green;
+  text-decoration: underline;
+}
+
+.show-sentence-split .sentence:nth-of-type(3n+0) {
+  color: red;
+  background-color: rgba(255,0,0,0.3);
+}
+.show-sentence-split .sentence:nth-of-type(3n+1) {
+  color: blue;
+  background-color: rgba(0,0,255,0.3);
+}
+.show-sentence-split .sentence:nth-of-type(3n+2) {
+  color: green;
+  background-color: rgba(0,255,0,0.3);
+}
+
+.show-line-split .line:nth-of-type(3n+0) {
+  color: red;
+  background-color: rgba(255,0,0,0.3);
+}
+.show-line-split .line:nth-of-type(3n+1) {
+  color: blue;
+  background-color: rgba(0,0,255,0.3);
+}
+.show-line-split .line:nth-of-type(3n+2) {
+  color: green;
+  background-color: rgba(0,255,0,0.3);
+}
+
+.show-word-split .word {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.show-letter-split .letter:nth-of-type(3n+0) {
+  background-color: rgba(255,0,0,0.1);
+}
+.show-letter-split .letter:nth-of-type(3n+1) {
+  background-color: rgba(0,255,0,0.1);
+}
+.show-letter-split .letter:nth-of-type(3n+2) {
+  background-color: rgba(0,0,255,0.1);
+}
+
+
+/* END Visual-Showcasing of splitText options */
