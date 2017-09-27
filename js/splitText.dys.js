@@ -61,13 +61,16 @@
           var result = splitWords(thisText, thisElement);
           thisElement.html(result);
           var obj = splitLines_alt(thisElement, true);
-          $.each(obj,function(index,value){
-            var thisValue = value;
-            if(isJquery(value.text)) { value.text = value.text.html(); }
-            var thisLine = $("<span class='line' data-yval='"+value.top+"''>"+value.text+"</span>");
-            thisLine.appendTo(thisElement);
-            thisLine.children(':not(.word)').children('.word');
-          });
+          // $.each(obj,function(index,value){
+            // var thisValue = value;
+            // if(isJquery(value.text)) { value.text = value.text.html(); }
+            // var thisLine = $("<span class='line' data-yval='"+value.top+"''>"+value.text+"</span>");
+            // thisLine.appendTo(thisElement);
+            // thisLine.children(':not(.word)').children('.word');
+            // thisLine.find('span.white-space').replaceWith(' ');
+          // });
+          thisElement.find('span.white-space').replaceWith(' ');
+
         });
       }
       else if(splitType=='words'){
@@ -176,6 +179,7 @@
     
     function splitLines_alt(thisElement, option) {
       var childrenOfElement = thisElement.children();
+      var returnObj = $('');
       var elementHeight_Array = [];
       childrenOfElement.each(function(index) {
         var thisChildElement = $(this);
@@ -184,10 +188,11 @@
       var thisLine = $('<span class="line current"></span>');
       childrenOfElement.eq(0).before(thisLine);
       childrenOfElement.eq(0).appendTo(thisLine);
-      for(var x=1; x<elementHeight_Array.length-1; x++) {
-        if(elementHeight_Array[x-1] !== elementHeight_Array[x]) {
+      for(var x=1; x<elementHeight_Array.length; x++) {
+        if(elementHeight_Array[x-1] !== elementHeight_Array[x]) { // if height-compare is different
           if(childrenOfElement.eq(x-1).hasClass('white-space') || childrenOfElement.eq(x-1).hasClass('word') || childrenOfElement.eq(x-1).children('.word').length < 2) {
             $('.line.current').removeClass('current');
+            thisLine.appendTo(returnObj);
             thisLine = thisLine.clone();
             thisLine = $('<span class="line current"></span>');
             childrenOfElement.eq(x).before(thisLine);
@@ -223,10 +228,12 @@
 
         } 
         else { childrenOfElement.eq(x).appendTo(thisLine); }
+
       }
       $('.line.current').removeClass('.current');
       //$('span.white-space').replaceWith(' ');
       cleanUpContent(thisElement);
+      return childrenOfElement;
     }
 
     function splitLines_new(thisElement, option) {

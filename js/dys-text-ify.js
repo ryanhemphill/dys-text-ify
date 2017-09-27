@@ -28,7 +28,7 @@ function lineStyleThis(targetContent, styleName) {
 
   }
   if(styleName === 'off') {
-
+    targetContent.parent().removeClass('dys-focus');
   } 
   else if(styleName == 'gradient') {
     targetContent.dystextify({ type:'lines'});
@@ -229,46 +229,43 @@ function focusThis(target, options) {
     }
 
     // mouse behaviors
-    var allPossibleTargets;
-    var focusType = target.first().attr('data-focus-type');
+    var allPossibleTargets, focusType;
+    if(options !== false) { focusType = target.first().attr('data-focus-type');
+    } else                { focusType = 'off'; }
+    
     if(focusType      == 'lines')      { allPossibleTargets = target.find('.line'); } 
     else if(focusType == 'sentences')  { allPossibleTargets = target.find('.sentence'); }
-    allPossibleTargets.bind('mouseenter', function() {
-      var thisElement = $(this);
-      var thisContainer = thisElement.parents('.dys');
-      var activeElements = allPossibleTargets.filter('.active');
-      var lastActiveElement = activeElements.last();
+    if(focusType !== false && focusType != 'off') {
+      allPossibleTargets.bind('mouseenter', function() {
+        var thisElement = $(this);
+        var thisContainer = thisElement.parents('.dys');
+        var activeElements = allPossibleTargets.filter('.active');
+        var lastActiveElement = activeElements.last();
 
-      var activeElements_length = Number(thisContainer.attr('data-focus-size'));
-        
-      if(thisElement != lastActiveElement) {
-        var indexofThisElement = allPossibleTargets.index(thisElement);
-        if(indexofThisElement+1-activeElements_length > 0) {
-          allPossibleTargets.removeClass('active');
-          for(var x=0; x < activeElements_length; x++) {
-            var thisTarget = allPossibleTargets.eq(indexofThisElement-x);
-            thisTarget.addClass('active');
+        var activeElements_length = Number(thisContainer.attr('data-focus-size'));
+          
+        if(thisElement != lastActiveElement) {
+          var indexofThisElement = allPossibleTargets.index(thisElement);
+          if(indexofThisElement+1-activeElements_length > 0) {
+            allPossibleTargets.removeClass('active');
+            for(var x=0; x < activeElements_length; x++) {
+              var thisTarget = allPossibleTargets.eq(indexofThisElement-x);
+              thisTarget.addClass('active');
+            }
+          } else {
+            allPossibleTargets
+              .removeClass('active')
+              .each(function(index) {
+                if(index < activeElements_length) {
+                  $(this).addClass('active');
+                } else { return false; }
+              })
+
           }
-        } else {
-          allPossibleTargets
-            .removeClass('active')
-            .each(function(index) {
-              if(index < activeElements_length) {
-                $(this).addClass('active');
-              } else { return false; }
-            })
-
         }
-        // } else { // almost at top of content, set active from top
-        //   allPossibleTargets.removeClass('active');
-        //   allPossibleTargets.each(function(index) {
-        //     if(index < activeElements_length) {
-        //       $(this).addClass('active');
-        //     } else { return false; }
-        //   });
-        // }
-      }
-    });
+      });
+    }
+    
 
 
 

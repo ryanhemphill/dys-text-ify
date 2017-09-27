@@ -64,7 +64,7 @@ function setupA11ySettingFunctions() {
     var thisButton = $(this);
     var sampleArea = $('#a11y-sample-area p');
     if(thisButton.attr('id') == 'line-style-off') {
-      lineStyleThis(sampleArea);
+      lineStyleThis(sampleArea, 'off');
     }
     else if(thisButton.attr('id') == 'line-style-gradient') {
       lineStyleThis(sampleArea, 'gradient');
