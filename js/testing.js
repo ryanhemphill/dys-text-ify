@@ -65,12 +65,21 @@ function setupA11ySettingFunctions() {
     var sampleArea = $('#a11y-sample-area p');
     if(thisButton.attr('id') == 'line-style-off') {
       lineStyleThis(sampleArea, 'off');
+      // activate sentence radio-buttons in focus settings
+      $('#focus-1-sentence').removeAttr('disabled');
+      $('#focus-3-sentences').removeAttr('disabled');
     }
     else if(thisButton.attr('id') == 'line-style-gradient') {
       lineStyleThis(sampleArea, 'gradient');
+      // DE-activate sentence radio-buttons in focus settings
+      $('#focus-1-sentence').attr('disabled', '');
+      $('#focus-3-sentences').attr('disabled', '');
     }
     else if(thisButton.attr('id') == 'line-style-multicolor') {
       lineStyleThis(sampleArea, 'multicolor');
+      // DE-activate sentence radio-buttons in focus settings
+      $('#focus-1-sentence').attr('disabled', '');
+      $('#focus-3-sentences').attr('disabled', '');
     }
   });
 
@@ -83,18 +92,23 @@ function setupA11ySettingFunctions() {
     if(thisButton.attr('id') == 'focus-off') {
       focusThis(sampleArea, false);
       sampleArea.removeClass('dys-focus');
+      $('#line-style-gradient').removeAttr('disabled');
     }
     if(thisButton.attr('id') == 'focus-1-line') {
       focusThis(sampleArea, { type: 'lines', size: 1 });
+      $('#line-style-gradient').removeAttr('disabled');
     }
     if(thisButton.attr('id') == 'focus-3-lines') {
       focusThis(sampleArea, { type: 'lines', size: 3 });
+      $('#line-style-gradient').removeAttr('disabled');
     }
     if(thisButton.attr('id') == 'focus-1-sentence') {
       focusThis(sampleArea, { type: 'sentences', size: 1 });
+      $('#line-style-gradient').attr('disabled', '');
     }
     if(thisButton.attr('id') == 'focus-3-sentences') {
       focusThis(sampleArea, { type: 'sentences', size: 3 });
+      $('#line-style-gradient').attr('disabled', '');
     }
   });
 }
