@@ -1,215 +1,163 @@
-<!-- styleguide_template.html -->
-<html>
-<head>
-  <meta itemprop="name" content="Dystextify Setting Demo">
-  <meta itemprop="description" content="A demo of dystextify, a reading disorder JavaScript plugin to restyle .">
-  <meta itemprop="image" content="http://www.bryanbraun.com/sites/default/files/frontend-styleguide-template.png">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dystextify Setting Demo</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-  
-  <link href=css/default.css rel=stylesheet>
-  
-  
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/TweenLite.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/plugins/CSSPlugin.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/easing/EasePack.min.js"></script> -->
-
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenLite.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/utils/Draggable.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/plugins/CSSPlugin.min.js"></script> -->
-  
-
-</head>
-<body>
-  <div id="a11y-settings-container">
-    <button id="a11y-menu-toggle-button" tabindex="0">
-      <span class="icon-bgcolor"></span>
-      <span class="dys-icon access-icon"></span>
-
-      <span class="toggle-title">
-        Access
-        <!-- <span class="toggle-caret caret-down"></span> -->
-      </span>
-    </button>
-    <div id="a11y-settings">
-      
-      <h3 class="a11y-setting-title level-1 locked-open active">dys-text-ify settings
-        <span class="toggle-caret"></span>
-      </h3>
-
-      <div class="a11y-setting-container level-1 locked-open active">
-        
-        <h4 class="a11y-setting-title level-2 locked-open active" aria-expanded="true" aria-haspopup="true" tabindex="0">Basic Control<span class="toggle-caret"></span></h4>
-        
-        <div class="a11y-setting-container level-2 locked-open active">    
-          <h4 class="a11y-setting-title level-2 locked-open active" tabindex="0">Font-Family<span class="toggle-caret"></span></h4>
-          <div class="a11y-setting-container locked-open active">
-            <div class="a11y-setting-column">
-              <div class="radio">
-                <input id="font-family-off" name="font-family" type="radio" checked>
-                <label for="font-family-off" class="radio-label">Off (Default)</label>
-              </div>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Dystextify Setting Demo</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href=css/default.css rel=stylesheet>
+   </head>
+   <body>
+      <div id="a11y-settings-container">
+         <button id="a11y-menu-toggle-button" tabindex="0">
+            <span class="icon-bgcolor"></span>
+            <span class="dys-icon access-icon"></span>
+            <span class="toggle-title">
+               Access
+               <!-- <span class="toggle-caret caret-down"></span> -->
+            </span>
+         </button>
+         <div id="a11y-settings">
+            <h3 class="a11y-setting-title level-1 locked-open active">dys-text-ify settings
+               <span class="toggle-caret"></span>
+            </h3>
+            <div class="a11y-setting-container level-1 locked-open active">
+               <h4 class="a11y-setting-title level-2 locked-open active" aria-expanded="true" aria-haspopup="true" tabindex="0">Basic Control<span class="toggle-caret"></span></h4>
+               <div class="a11y-setting-container level-2 locked-open active">
+                  <h4 class="a11y-setting-title level-2 locked-open active" tabindex="0">Font-Family<span class="toggle-caret"></span></h4>
+                  <div class="a11y-setting-container locked-open active">
+                     <div class="a11y-setting-column">
+                        <div class="radio">
+                           <input id="font-family-off" name="font-family" type="radio" checked>
+                           <label for="font-family-off" class="radio-label">Off (Default)</label>
+                        </div>
+                     </div>
+                     <div class="a11y-setting-column">
+                        <div class="radio">
+                           <input id="font-family-dyslexie" name="font-family" type="radio">
+                           <label for="font-family-dyslexie" class="radio-label">Dyslexie</label>
+                        </div>
+                        <div class="radio">
+                           <input id="font-family-opendyslexic" name="font-family" type="radio">
+                           <label for="font-family-opendyslexic" class="radio-label">OpenDyslexia</label>
+                        </div>
+                        <div class="radio">
+                           <input id="font-family-lexiereadable" name="font-family" type="radio">
+                           <label for="font-family-lexiereadable" class="radio-label">Lexie Readable</label>
+                        </div>
+                     </div>
+                  </div>
+                  <h4 class="a11y-setting-title level-2 locked-open active" tabindex="0">Color (Font & Background)<span class="toggle-caret"></span></h4>
+                  <div class="a11y-setting-container locked-open active">
+                     <div class="a11y-setting-column">
+                        <div class="radio">
+                           <input id="font-color-off" name="font-color" type="radio" checked>
+                           <label for="font-color-off" class="radio-label">Off (Default)</label>
+                        </div>
+                        <div class="radio">
+                           <input id="font-color-rose" name="font-color" type="radio">
+                           <label for="font-color-rose" class="radio-label">Rose</label>
+                        </div>
+                        <div class="radio">
+                           <input id="font-color-blue" name="font-color" type="radio">
+                           <label for="font-color-blue" class="radio-label">Blue</label>
+                        </div>
+                     </div>
+                     <div class="a11y-setting-column">
+                        <div class="radio">
+                           <input id="font-color-green" name="font-color" type="radio">
+                           <label for="font-color-green" class="radio-label">Green</label>
+                        </div>
+                        <div class="radio">
+                           <input id="font-color-tan" name="font-color" type="radio">
+                           <label for="font-color-tan" class="radio-label">Tan</label>
+                        </div>
+                        <div class="radio">
+                           <input id="font-color-gray" name="font-color" type="radio">
+                           <label for="font-color-gray" class="radio-label">Gray</label>
+                        </div>
+                     </div>
+                  </div>
+                  <h4 class="a11y-setting-title level-2 locked-open active" aria-expanded="false" aria-haspopup="true" tabindex="0">Line Control (advanced settings)<span class="toggle-caret"></span></h4>
+                  <div class="a11y-setting-container level-2 locked-open active">
+                     <div class="a11y-setting-column">
+                        <div class="radio">
+                           <input id="line-style-off" name="line-style" type="radio">
+                           <label for="line-style-off" class="radio-label">Off</label>
+                        </div>
+                     </div>
+                     <div class="a11y-setting-column">
+                        <div class="radio">
+                           <input id="line-style-gradient" name="line-style" type="radio">
+                           <label for="line-style-gradient" class="radio-label">Font Color Gradient</label>
+                        </div>
+                        <div class="radio">
+                           <input id="line-style-multicolor" name="line-style" type="radio">
+                           <label for="line-style-multicolor" class="radio-label">Multicolor + Gradient</label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <h4 class="a11y-setting-title level-2 locked-open active" aria-expanded="false" aria-haspopup="true" tabindex="0">Focus Control<span class="toggle-caret"></span></h4>
+               <div class="a11y-setting-container level-2 locked-open active">
+                  <h4 class="a11y-setting-title level-2 locked-open active" tabindex="0">Depth of Focus<span class="toggle-caret"></span></h4>
+                  <div class="a11y-setting-container level-2 locked-open active">
+                     <div class="a11y-setting-column">
+                        <div class="radio">
+                           <input id="focus-off" name="focus" type="radio">
+                           <label for="focus-off" class="radio-label">Off</label>
+                        </div>
+                        <div class="radio">
+                           <input id="focus-3-sentences" name="focus" type="radio">
+                           <label for="focus-3-sentences" class="radio-label">3 Sentences</label>
+                        </div>
+                        <div class="radio">
+                           <input id="focus-1-sentence" name="focus" type="radio">
+                           <label for="focus-1-sentence" class="radio-label">1 Sentences</label>
+                        </div>
+                        <div class="radio">
+                           <input id="focus-3-lines" name="focus" type="radio">
+                           <label for="focus-3-lines" class="radio-label">3 Lines</label>
+                        </div>
+                        <div class="radio">
+                           <input id="focus-1-line" name="focus" type="radio">
+                           <label for="focus-1-line" class="radio-label">1 Line</label>
+                        </div>
+                     </div>
+                     <div class="a11y-setting-column" style="display: none;">
+                        <div class="radio">
+                           <input id="focus-6-words" name="focus" type="radio" disabled>
+                           <label for="focus-6-words" class="radio-label">6 Words</label>
+                        </div>
+                        <div class="radio">
+                           <input id="focus-4-words" name="focus" type="radio" disabled>
+                           <label for="focus-4-words" class="radio-label">4 Words</label>
+                        </div>
+                        <div class="radio">
+                           <input id="focus-3-words" name="focus" type="radio" disabled>
+                           <label for="focus-3-words" class="radio-label">3 Words</label>
+                        </div>
+                        <div class="radio">
+                           <input id="focus-1-words" name="focus" type="radio" disabled>
+                           <label for="focus-1-words" class="radio-label">1 Word</label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="a11y-setting-column">
-              <div class="radio">
-                <input id="font-family-dyslexie" name="font-family" type="radio">
-                <label for="font-family-dyslexie" class="radio-label">Dyslexie</label>
-              </div>
-              <div class="radio">
-                <input id="font-family-opendyslexic" name="font-family" type="radio">
-                <label for="font-family-opendyslexic" class="radio-label">OpenDyslexia</label>
-              </div>
-              <div class="radio">
-                <input id="font-family-lexiereadable" name="font-family" type="radio">
-                <label for="font-family-lexiereadable" class="radio-label">Lexie Readable</label>
-              </div>
+            <div id="a11y-sample-area" class="a11y-setting-container level-1 locked-open active">
+               <p>Alice was not a bit hurt, and she jumped up on to her feet in a moment: she looked up, but it was all dark overhead; before her was another long passage, and the White Rabbit was still in sight, hurrying down it. There was not a moment to be lost: away went Alice like the wind, and was just in time to hear it say, as it turned a corner, `Oh my ears and whiskers, how late it's getting!' She was close behind it when she turned the corner, but the Rabbit was no longer to be seen: she found herself in a long, low hall, which was lit up by a row of lamps hanging from the roof.</p>
+               <p>There were doors all round the hall, but they were all locked; and when Alice had been all the way down one side and up the other, trying every door, she walked sadly down the middle, wondering how she was ever to get out again.</p>
+               <p>Suddenly she came upon a little three-legged table, all made of solid glass; there was nothing on it except a tiny golden key, and Alice's first thought was that it might belong to one of the doors of the hall; but, alas! either the locks were too large, or the key was too small, but at any rate it would not open any of them. However, on the second time round, she came upon a low curtain she had not noticed before, and behind it was a little door about fifteen inches high: she tried the little golden key in the lock, and to her great delight it fitted!</p>
             </div>
-          </div>
-          
-          <h4 class="a11y-setting-title level-2 locked-open active" tabindex="0">Color (Font & Background)<span class="toggle-caret"></span></h4>
-          <div class="a11y-setting-container locked-open active">
-            <div class="a11y-setting-column">
-              <div class="radio">
-                <input id="font-color-off" name="font-color" type="radio" checked>
-                <label for="font-color-off" class="radio-label">Off (Default)</label>
-              </div>
-              <div class="radio">
-                <input id="font-color-rose" name="font-color" type="radio">
-                <label for="font-color-rose" class="radio-label">Rose</label>
-              </div>
-              <div class="radio">
-                <input id="font-color-blue" name="font-color" type="radio">
-                <label for="font-color-blue" class="radio-label">Blue</label>
-              </div>
-            </div>
-            <div class="a11y-setting-column">
-              <div class="radio">
-                <input id="font-color-green" name="font-color" type="radio">
-                <label for="font-color-green" class="radio-label">Green</label>
-              </div>
-              <div class="radio">
-                <input id="font-color-tan" name="font-color" type="radio">
-                <label for="font-color-tan" class="radio-label">Tan</label>
-              </div>
-              <div class="radio">
-                <input id="font-color-gray" name="font-color" type="radio">
-                <label for="font-color-gray" class="radio-label">Gray</label>
-              </div>
-            </div>
-          </div>
-
-          <h4 class="a11y-setting-title level-2 locked-open active" aria-expanded="false" aria-haspopup="true" tabindex="0">Line Control (advanced settings)<span class="toggle-caret"></span></h4>
-          <div class="a11y-setting-container level-2 locked-open active">
-            <div class="a11y-setting-column">
-              <div class="radio">
-                <input id="line-style-off" name="line-style" type="radio">
-                <label for="line-style-off" class="radio-label">Off</label>
-              </div>
-            </div>
-            <div class="a11y-setting-column">
-              <div class="radio">
-                <input id="line-style-gradient" name="line-style" type="radio">
-                <label for="line-style-gradient" class="radio-label">Font Color Gradient</label>
-              </div>
-              <div class="radio">
-                <input id="line-style-multicolor" name="line-style" type="radio">
-                <label for="line-style-multicolor" class="radio-label">Multicolor + Gradient</label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h4 class="a11y-setting-title level-2 locked-open active" aria-expanded="false" aria-haspopup="true" tabindex="0">Focus Control<span class="toggle-caret"></span></h4>       
-      
-        <div class="a11y-setting-container level-2 locked-open active">
-        <h4 class="a11y-setting-title level-2 locked-open active" tabindex="0">Depth of Focus<span class="toggle-caret"></span></h4>
-        <div class="a11y-setting-container level-2 locked-open active">
-          <div class="a11y-setting-column">
-            <div class="radio">
-              <input id="focus-off" name="focus" type="radio">
-              <label for="focus-off" class="radio-label">Off</label>
-            </div>
-            <div class="radio">
-              <input id="focus-3-sentences" name="focus" type="radio">
-              <label for="focus-3-sentences" class="radio-label">3 Sentences</label>
-            </div>
-            <div class="radio">
-              <input id="focus-1-sentence" name="focus" type="radio">
-              <label for="focus-1-sentence" class="radio-label">1 Sentences</label>
-            </div>
-            <div class="radio">
-              <input id="focus-3-lines" name="focus" type="radio">
-              <label for="focus-3-lines" class="radio-label">3 Lines</label>
-            </div>
-            <div class="radio">
-              <input id="focus-1-line" name="focus" type="radio">
-              <label for="focus-1-line" class="radio-label">1 Line</label>
-            </div>
-          </div>
-          <div class="a11y-setting-column" style="display: none;">
-            <div class="radio">
-              <input id="focus-6-words" name="focus" type="radio" disabled>
-              <label for="focus-6-words" class="radio-label">6 Words</label>
-            </div>
-            <div class="radio">
-              <input id="focus-4-words" name="focus" type="radio" disabled>
-              <label for="focus-4-words" class="radio-label">4 Words</label>
-            </div>
-            <div class="radio">
-              <input id="focus-3-words" name="focus" type="radio" disabled>
-              <label for="focus-3-words" class="radio-label">3 Words</label>
-            </div>
-            <div class="radio">
-              <input id="focus-1-words" name="focus" type="radio" disabled>
-              <label for="focus-1-words" class="radio-label">1 Word</label>
-            </div>
-          </div>
-        </div>
-        </div>
-
+         </div>
       </div>
-    
-      <div id="a11y-sample-area" class="a11y-setting-container level-1 locked-open active">
-
-        <!-- <p>
-          Kopi-Lewak Carajillo shop macchiato coffee, medium single shot redeye café au lait extraction flavour. Extraction, crema irish, siphon caffeine kopi-luwak milk coffee con panna. <a href="javascript:void(0);">Trifecta aroma seasonal</a>, <a href="javascript:void(0);">redeye percolator</a> <a href="javascript:void(0);">chicory shop blue mountain black</a>. <a href="javascript:void(0);">Aged, froth est, doppio sweet</a>, french press beans bar aftertaste strong wings. Cortado, galão trifecta medium white caffeine arabica caramelization extra.
-        </p>
-
-        <p>
-          Organic, body, blue mountain strong in medium brewed cream crema. Java mocha shop bar cinnamon so <a href="javascript:void(0);">Trifecta</a> robusta sweet breve. Mug blue mountain caramelization, rich lungo, breve so foam mazagran aftertaste. Mocha qui robusta carajillo cortado mug robust. Cream bar est galão, body doppio extraction foam aged crema chicory espresso.
-        </p>
-
-        <p>
-          Caramelization to go, <a href="javascript:void(0);">Trifecta</a> steamed saucer, chicory caffeine filter macchiato galão cinnamon robusta. Viennese, breve, mocha as variety, that cortado sit redeye roast saucer. Cultivar, breve viennese spoon, breve body breve skinny iced. Flavour variety doppio white aroma ut half and half. Cream affogato con panna id sit to go medium pumpkin spice to go turkish arabica.
-        </p>
-
-        <p>
-          Barista, trifecta brewed, java steamed est, cortado caramelization est viennese that <a href="javascript:void(0);">Trifecta</a>. Half and half, latte a beans trifecta eu to go chicory siphon java skinny. Spoon kopi-luwak french press cream aged skinny in seasonal. Ristretto rich cultivar cup filter bar robusta blue mountain. Macchiato, whipped, americano mazagran seasonal affogato variety cup filter café au lait variety.
-        </p> -->
-
-        <p>Alice was not a bit hurt, and she jumped up on to her feet in a moment: she looked up, but it was all dark overhead; before her was another long passage, and the White Rabbit was still in sight, hurrying down it. There was not a moment to be lost: away went Alice like the wind, and was just in time to hear it say, as it turned a corner, `Oh my ears and whiskers, how late it's getting!' She was close behind it when she turned the corner, but the Rabbit was no longer to be seen: she found herself in a long, low hall, which was lit up by a row of lamps hanging from the roof.</p>
-
-        <p>There were doors all round the hall, but they were all locked; and when Alice had been all the way down one side and up the other, trying every door, she walked sadly down the middle, wondering how she was ever to get out again.</p>
-
-        <p>Suddenly she came upon a little three-legged table, all made of solid glass; there was nothing on it except a tiny golden key, and Alice's first thought was that it might belong to one of the doors of the hall; but, alas! either the locks were too large, or the key was too small, but at any rate it would not open any of them. However, on the second time round, she came upon a low curtain she had not noticed before, and behind it was a little door about fifteen inches high: she tried the little golden key in the lock, and to her great delight it fitted!</p>
-      </div>
-    </div>
-
-  </div>
-
-  
-
-  <script src="js/jquery.js"></script>
-  <script src="js/TweenLite.min.js"></script>
-  <script src="js/CSSPlugin.min.js"></script> 
-  
-  <script src="js/splitText.dys.js"></script> 
-   
-  <script src="js/dys-text-ify.js"></script>
-  <script src="js/testing.js"></script>
-</body>
+      <script src="js/jquery.js"></script>
+      <script src="js/TweenLite.min.js"></script>
+      <script src="js/CSSPlugin.min.js"></script> 
+      <script src="js/splitText.dys.js"></script> 
+      <script src="js/dys-text-ify.js"></script>
+      <script src="js/testing.js"></script>
+   </body>
 </html>
