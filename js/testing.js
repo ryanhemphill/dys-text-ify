@@ -108,7 +108,8 @@ function setupA11ySettingFunctions() {
     } 
     else if(selfToggleState == 'true') {
       targetSample
-        .removeClass('dys-focus');
+        .removeClass('dys-focus')
+        .find('.active').removeClass('active');
       self
         .text('Apply Focus Mode')
         .attr('aria-pressed', 'false');
