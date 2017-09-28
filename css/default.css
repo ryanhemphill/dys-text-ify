@@ -47,6 +47,28 @@ body{
 }
 
 /* START focus treatments */
+#focus-toggle-button {
+  position: absolute;
+  background: whitesmoke;
+  top: 0.5em;
+  right: 1em;
+  box-shadow: grey 3px 3px 8px; 
+  font-size: 0.85em;
+  outline: transparent 1em solid;
+  padding: 0.25em;
+  border-radius: 0.2em;
+  border: 1px solid black;
+  z-index: 1;
+}
+#focus-toggle-button[aria-pressed="false"] {
+  background: rgb(220,220,220);
+  color:      rgb(50,50,50);
+  box-shadow: 0px 0px 9px 0px orange;
+}
+#focus-toggle-button[aria-hidden="true"] {
+  display: none;
+}
+
 .dys-focus.text-haze .word.word-focus {
   text-shadow: 1px 1px 0px rgba(0,0,0,0.1), 1px -1px 0px rgba(0,0,0,0.1), -1px 1px 0px rgba(0,0,0,0.1), -1px -1px 0px rgba(0,0,0,0.1);
 }
@@ -235,7 +257,7 @@ input[type="radio"]:disabled + .radio-label::before {
 }
 
 .a11y-setting-title.level-1 {
-
+  z-index: 0;
 }
 
 .a11y-setting-title.level-2 {
