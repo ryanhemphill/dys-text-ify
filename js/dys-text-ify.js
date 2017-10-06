@@ -230,8 +230,11 @@ function focusThis(target, options) {
 
     // mouse behaviors
     var allPossibleTargets, focusType;
-    if(options !== false) { focusType = target.first().attr('data-focus-type');
-    } else                { focusType = 'off'; }
+    if(options !== false && options != 'off') { 
+        focusType = target.first().attr('data-focus-type');
+    } 
+    else                
+      { focusType = 'off'; }
     
     if(focusType      == 'lines')      { allPossibleTargets = target.find('.line'); } 
     else if(focusType == 'sentences')  { allPossibleTargets = target.find('.sentence'); }
